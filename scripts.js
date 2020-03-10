@@ -32,4 +32,24 @@ document.addEventListener("DOMContentLoaded", function () {
     h6.appendChild(h6Text);
     div.appendChild(h6);
     document.body.appendChild(div);
+
+    let textColor = ['red', 'green', 'yellow', 'orange', 'purple', 'brown', 'grey', 'pink'];
+    h1.addEventListener('dblclick', function () {
+        h1.style.color = textColor[Math.floor(Math.random() * textColor.length)];
+    })
+    h2.addEventListener('dblclick', function () {
+        h2.style.color = textColor[Math.floor(Math.random() * textColor.length)];
+    })
+    h3.addEventListener('dblclick', function () {
+        h3.style.color = textColor[Math.floor(Math.random() * textColor.length)];
+    })
+    h4.addEventListener('dblclick', function () {
+        h4.style.color = textColor[Math.floor(Math.random() * textColor.length)];
+    })
+    h5.addEventListener('dblclick', function () {
+        h5.style.color = textColor[Math.floor(Math.random() * textColor.length)];
+    })
+    h6.addEventListener('dblclick', function () {
+        h6.style.color = textColor[Math.floor(Math.random() * textColor.length)];
+    })
 });
