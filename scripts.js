@@ -33,25 +33,19 @@ document.addEventListener("DOMContentLoaded", function () {
     div.appendChild(h6);
     document.body.appendChild(div);
 
-    let textColor = ['red', 'green', 'yellow', 'orange', 'purple', 'brown', 'grey', 'pink'];
-    h1.addEventListener('dblclick', function () {
-        h1.style.color = textColor[Math.floor(Math.random() * textColor.length)];
-    })
-    h2.addEventListener('dblclick', function () {
-        h2.style.color = textColor[Math.floor(Math.random() * textColor.length)];
-    })
-    h3.addEventListener('dblclick', function () {
-        h3.style.color = textColor[Math.floor(Math.random() * textColor.length)];
-    })
-    h4.addEventListener('dblclick', function () {
-        h4.style.color = textColor[Math.floor(Math.random() * textColor.length)];
-    })
-    h5.addEventListener('dblclick', function () {
-        h5.style.color = textColor[Math.floor(Math.random() * textColor.length)];
-    })
-    h6.addEventListener('dblclick', function () {
-        h6.style.color = textColor[Math.floor(Math.random() * textColor.length)];
-    })
+    function changeColor(e) {
+        let colors = ['red', 'green', 'yellow', 'orange', 'purple', 'brown', 'grey', 'pink'];
+        let randomColor = colors[Math.floor(Math.random() * colors.length)];
+        e.target.style.color = randomColor;
+    }
+
+    
+    h1.addEventListener('dblclick', changeColor);
+    h2.addEventListener('dblclick', changeColor);
+    h3.addEventListener('dblclick', changeColor);
+    h4.addEventListener('dblclick', changeColor);
+    h5.addEventListener('dblclick', changeColor);
+    h6.addEventListener('dblclick', changeColor);
 
     let list = document.createElement('ul');
     document.body.appendChild(list);
@@ -62,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let itemText = document.createTextNode('This is list item' + [i++]);
         listItem.appendChild(itemText);
         list.appendChild(listItem);
+        listItem.addEventListener('click', changeColor);
 
     }
     document.getElementsByClassName('listButton')[0].addEventListener('click', addListItem);
