@@ -57,7 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
         listItem.appendChild(itemText);
         list.appendChild(listItem);
         listItem.addEventListener('click', changeColor);
+        listItem.addEventListener('dblclick', function(){
+            list.removeChild(listItem);
+        })
 
     }
     document.getElementsByClassName('listButton')[0].addEventListener('click', addListItem);
+
+    
 });
