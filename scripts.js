@@ -52,4 +52,17 @@ document.addEventListener("DOMContentLoaded", function () {
     h6.addEventListener('dblclick', function () {
         h6.style.color = textColor[Math.floor(Math.random() * textColor.length)];
     })
+
+    function addListItem() {
+        let list = document.createElement('ul');
+        document.body.appendChild(list);
+
+        for (let i = 1; i <= 10; ++i) {
+            let listItem = document.createElement('li');
+            let itemText = document.createTextNode('This is list item' + [i]);
+            listItem.appendChild(itemText);
+            list.appendChild(listItem);
+        }
+    }
+    document.getElementsByClassName('listButton')[0].addEventListener('click', addListItem);
 });
